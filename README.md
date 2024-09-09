@@ -3,7 +3,7 @@ Here, you'll find in-depth tutorials, code samples, and practical examples demon
 
 Projects
 
-- [ ] Hello, metal!
+- [x] Hello, metal!
 - [ ] Hello, triangle!
 - [ ] Render an image.
 
