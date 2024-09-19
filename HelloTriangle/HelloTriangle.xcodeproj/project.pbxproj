@@ -11,6 +11,8 @@
 		D78BBBD62C9B1AAA003ED284 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78BBBD52C9B1AAA003ED284 /* ViewController.swift */; };
 		D78BBBD82C9B1AAB003ED284 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78BBBD72C9B1AAB003ED284 /* Assets.xcassets */; };
 		D78BBBDB2C9B1AAB003ED284 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D78BBBDA2C9B1AAB003ED284 /* Base */; };
+		D78BBBE32C9B1BBC003ED284 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78BBBE22C9B1BBC003ED284 /* Renderer.swift */; };
+		D7BEA3A22C9C678400330D18 /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = D7BEA3A12C9C678400330D18 /* Shader.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		D78BBBD72C9B1AAB003ED284 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D78BBBDA2C9B1AAB003ED284 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D78BBBDC2C9B1AAB003ED284 /* HelloTriangle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HelloTriangle.entitlements; sourceTree = "<group>"; };
+		D78BBBE22C9B1BBC003ED284 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Renderer.swift; path = ../../HelloMetal/HelloMetal/Renderer.swift; sourceTree = "<group>"; };
+		D7BEA3A12C9C678400330D18 /* Shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +56,13 @@
 		D78BBBD22C9B1AAA003ED284 /* HelloTriangle */ = {
 			isa = PBXGroup;
 			children = (
+				D78BBBE22C9B1BBC003ED284 /* Renderer.swift */,
 				D78BBBD32C9B1AAA003ED284 /* AppDelegate.swift */,
 				D78BBBD52C9B1AAA003ED284 /* ViewController.swift */,
 				D78BBBD72C9B1AAB003ED284 /* Assets.xcassets */,
 				D78BBBD92C9B1AAB003ED284 /* Main.storyboard */,
 				D78BBBDC2C9B1AAB003ED284 /* HelloTriangle.entitlements */,
+				D7BEA3A12C9C678400330D18 /* Shader.metal */,
 			);
 			path = HelloTriangle;
 			sourceTree = "<group>";
@@ -131,7 +137,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7BEA3A22C9C678400330D18 /* Shader.metal in Sources */,
 				D78BBBD62C9B1AAA003ED284 /* ViewController.swift in Sources */,
+				D78BBBE32C9B1BBC003ED284 /* Renderer.swift in Sources */,
 				D78BBBD42C9B1AAA003ED284 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
