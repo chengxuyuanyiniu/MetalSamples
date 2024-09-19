@@ -4,6 +4,6 @@ Here, you'll find in-depth tutorials, code samples, and practical examples demon
 Projects
 
 - [x] Hello, metal!
-- [ ] Hello, triangle!
+- [x] Hello, triangle!
 - [ ] Render an image.
 
