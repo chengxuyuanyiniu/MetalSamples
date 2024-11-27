@@ -20,8 +20,8 @@ class ViewController: NSViewController {
         mtkView.isPaused = true
         
         render = Renderer(mtkView: mtkView)
+        render.viewPortSize = vector_int2(x: Int32(view.frame.size.width), y: Int32(view.frame.size.height))
         mtkView.delegate = render
-        mtkView.needsDisplay = true
         
         Task.detached {
             let texture = await self.createTexture()
