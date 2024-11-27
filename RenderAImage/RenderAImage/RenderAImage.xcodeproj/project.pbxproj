@@ -7,27 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D78BBBD42C9B1AAA003ED284 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78BBBD32C9B1AAA003ED284 /* AppDelegate.swift */; };
-		D78BBBD62C9B1AAA003ED284 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78BBBD52C9B1AAA003ED284 /* ViewController.swift */; };
-		D78BBBD82C9B1AAB003ED284 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78BBBD72C9B1AAB003ED284 /* Assets.xcassets */; };
-		D78BBBDB2C9B1AAB003ED284 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D78BBBDA2C9B1AAB003ED284 /* Base */; };
-		D78BBBE32C9B1BBC003ED284 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78BBBE22C9B1BBC003ED284 /* Renderer.swift */; };
-		D7BEA3A22C9C678400330D18 /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = D7BEA3A12C9C678400330D18 /* Shader.metal */; };
+		D7C202872CF6F2F3007AE17A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C202862CF6F2F3007AE17A /* AppDelegate.swift */; };
+		D7C202892CF6F2F3007AE17A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C202882CF6F2F3007AE17A /* ViewController.swift */; };
+		D7C2028B2CF6F2F5007AE17A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7C2028A2CF6F2F5007AE17A /* Assets.xcassets */; };
+		D7C2028E2CF6F2F5007AE17A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D7C2028D2CF6F2F5007AE17A /* Base */; };
+		D7C202962CF6F343007AE17A /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C202952CF6F343007AE17A /* Renderer.swift */; };
+		D7C202982CF6F34F007AE17A /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = D7C202972CF6F34F007AE17A /* Shader.metal */; };
+		D7C2029A2CF6F729007AE17A /* lena_color.png in Resources */ = {isa = PBXBuildFile; fileRef = D7C202992CF6F729007AE17A /* lena_color.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D78BBBD02C9B1AAA003ED284 /* HelloTriangle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloTriangle.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D78BBBD32C9B1AAA003ED284 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D78BBBD52C9B1AAA003ED284 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D78BBBD72C9B1AAB003ED284 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D78BBBDA2C9B1AAB003ED284 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D78BBBDC2C9B1AAB003ED284 /* HelloTriangle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HelloTriangle.entitlements; sourceTree = "<group>"; };
-		D78BBBE22C9B1BBC003ED284 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Renderer.swift; path = ../../HelloMetal/HelloMetal/Renderer.swift; sourceTree = "<group>"; };
-		D7BEA3A12C9C678400330D18 /* Shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
+		D7C202832CF6F2F3007AE17A /* RenderAImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenderAImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7C202862CF6F2F3007AE17A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D7C202882CF6F2F3007AE17A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D7C2028A2CF6F2F5007AE17A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7C2028D2CF6F2F5007AE17A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D7C2028F2CF6F2F5007AE17A /* RenderAImage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RenderAImage.entitlements; sourceTree = "<group>"; };
+		D7C202952CF6F343007AE17A /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Renderer.swift; path = ../../../HelloMetal/HelloMetal/Renderer.swift; sourceTree = "<group>"; };
+		D7C202972CF6F34F007AE17A /* Shader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = Shader.metal; path = ../../../HelloTriangle/HelloTriangle/Shader.metal; sourceTree = "<group>"; };
+		D7C202992CF6F729007AE17A /* lena_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lena_color.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D78BBBCD2C9B1AAA003ED284 /* Frameworks */ = {
+		D7C202802CF6F2F3007AE17A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,72 +39,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D78BBBC72C9B1AAA003ED284 = {
+		D7C2027A2CF6F2F3007AE17A = {
 			isa = PBXGroup;
 			children = (
-				D78BBBD22C9B1AAA003ED284 /* HelloTriangle */,
-				D78BBBD12C9B1AAA003ED284 /* Products */,
+				D7C202852CF6F2F3007AE17A /* RenderAImage */,
+				D7C202842CF6F2F3007AE17A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D78BBBD12C9B1AAA003ED284 /* Products */ = {
+		D7C202842CF6F2F3007AE17A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D78BBBD02C9B1AAA003ED284 /* HelloTriangle.app */,
+				D7C202832CF6F2F3007AE17A /* RenderAImage.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D78BBBD22C9B1AAA003ED284 /* HelloTriangle */ = {
+		D7C202852CF6F2F3007AE17A /* RenderAImage */ = {
 			isa = PBXGroup;
 			children = (
-				D78BBBE22C9B1BBC003ED284 /* Renderer.swift */,
-				D78BBBD32C9B1AAA003ED284 /* AppDelegate.swift */,
-				D78BBBD52C9B1AAA003ED284 /* ViewController.swift */,
-				D78BBBD72C9B1AAB003ED284 /* Assets.xcassets */,
-				D78BBBD92C9B1AAB003ED284 /* Main.storyboard */,
-				D78BBBDC2C9B1AAB003ED284 /* HelloTriangle.entitlements */,
-				D7BEA3A12C9C678400330D18 /* Shader.metal */,
+				D7C202952CF6F343007AE17A /* Renderer.swift */,
+				D7C202862CF6F2F3007AE17A /* AppDelegate.swift */,
+				D7C202882CF6F2F3007AE17A /* ViewController.swift */,
+				D7C2028A2CF6F2F5007AE17A /* Assets.xcassets */,
+				D7C2028C2CF6F2F5007AE17A /* Main.storyboard */,
+				D7C2028F2CF6F2F5007AE17A /* RenderAImage.entitlements */,
+				D7C202972CF6F34F007AE17A /* Shader.metal */,
+				D7C202992CF6F729007AE17A /* lena_color.png */,
 			);
-			path = HelloTriangle;
+			path = RenderAImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D78BBBCF2C9B1AAA003ED284 /* HelloTriangle */ = {
+		D7C202822CF6F2F3007AE17A /* RenderAImage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D78BBBDF2C9B1AAB003ED284 /* Build configuration list for PBXNativeTarget "HelloTriangle" */;
+			buildConfigurationList = D7C202922CF6F2F5007AE17A /* Build configuration list for PBXNativeTarget "RenderAImage" */;
 			buildPhases = (
-				D78BBBCC2C9B1AAA003ED284 /* Sources */,
-				D78BBBCD2C9B1AAA003ED284 /* Frameworks */,
-				D78BBBCE2C9B1AAA003ED284 /* Resources */,
+				D7C2027F2CF6F2F3007AE17A /* Sources */,
+				D7C202802CF6F2F3007AE17A /* Frameworks */,
+				D7C202812CF6F2F3007AE17A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = HelloTriangle;
-			productName = HelloTriangle;
-			productReference = D78BBBD02C9B1AAA003ED284 /* HelloTriangle.app */;
+			name = RenderAImage;
+			productName = RenderAImage;
+			productReference = D7C202832CF6F2F3007AE17A /* RenderAImage.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D78BBBC82C9B1AAA003ED284 /* Project object */ = {
+		D7C2027B2CF6F2F3007AE17A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					D78BBBCF2C9B1AAA003ED284 = {
+					D7C202822CF6F2F3007AE17A = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
-			buildConfigurationList = D78BBBCB2C9B1AAA003ED284 /* Build configuration list for PBXProject "HelloTriangle" */;
+			buildConfigurationList = D7C2027E2CF6F2F3007AE17A /* Build configuration list for PBXProject "RenderAImage" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,47 +113,48 @@
 				en,
 				Base,
 			);
-			mainGroup = D78BBBC72C9B1AAA003ED284;
-			productRefGroup = D78BBBD12C9B1AAA003ED284 /* Products */;
+			mainGroup = D7C2027A2CF6F2F3007AE17A;
+			productRefGroup = D7C202842CF6F2F3007AE17A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D78BBBCF2C9B1AAA003ED284 /* HelloTriangle */,
+				D7C202822CF6F2F3007AE17A /* RenderAImage */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D78BBBCE2C9B1AAA003ED284 /* Resources */ = {
+		D7C202812CF6F2F3007AE17A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D78BBBD82C9B1AAB003ED284 /* Assets.xcassets in Resources */,
-				D78BBBDB2C9B1AAB003ED284 /* Base in Resources */,
+				D7C2028B2CF6F2F5007AE17A /* Assets.xcassets in Resources */,
+				D7C2029A2CF6F729007AE17A /* lena_color.png in Resources */,
+				D7C2028E2CF6F2F5007AE17A /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D78BBBCC2C9B1AAA003ED284 /* Sources */ = {
+		D7C2027F2CF6F2F3007AE17A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7BEA3A22C9C678400330D18 /* Shader.metal in Sources */,
-				D78BBBD62C9B1AAA003ED284 /* ViewController.swift in Sources */,
-				D78BBBE32C9B1BBC003ED284 /* Renderer.swift in Sources */,
-				D78BBBD42C9B1AAA003ED284 /* AppDelegate.swift in Sources */,
+				D7C202982CF6F34F007AE17A /* Shader.metal in Sources */,
+				D7C202892CF6F2F3007AE17A /* ViewController.swift in Sources */,
+				D7C202962CF6F343007AE17A /* Renderer.swift in Sources */,
+				D7C202872CF6F2F3007AE17A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D78BBBD92C9B1AAB003ED284 /* Main.storyboard */ = {
+		D7C2028C2CF6F2F5007AE17A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D78BBBDA2C9B1AAB003ED284 /* Base */,
+				D7C2028D2CF6F2F5007AE17A /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -158,7 +162,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D78BBBDD2C9B1AAB003ED284 /* Debug */ = {
+		D7C202902CF6F2F5007AE17A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -211,7 +215,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -221,7 +225,7 @@
 			};
 			name = Debug;
 		};
-		D78BBBDE2C9B1AAB003ED284 /* Release */ = {
+		D7C202912CF6F2F5007AE17A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -268,7 +272,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -276,16 +280,15 @@
 			};
 			name = Release;
 		};
-		D78BBBE02C9B1AAB003ED284 /* Debug */ = {
+		D7C202932CF6F2F5007AE17A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = HelloTriangle/HelloTriangle.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = RenderAImage/RenderAImage.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -294,26 +297,23 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chengxuyuanyiniu.HelloTriangle;
+				PRODUCT_BUNDLE_IDENTIFIER = chengxuyuan.RenderAImage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		D78BBBE12C9B1AAB003ED284 /* Release */ = {
+		D7C202942CF6F2F5007AE17A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = HelloTriangle/HelloTriangle.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = RenderAImage/RenderAImage.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -322,11 +322,9 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chengxuyuanyiniu.HelloTriangle;
+				PRODUCT_BUNDLE_IDENTIFIER = chengxuyuan.RenderAImage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -335,25 +333,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D78BBBCB2C9B1AAA003ED284 /* Build configuration list for PBXProject "HelloTriangle" */ = {
+		D7C2027E2CF6F2F3007AE17A /* Build configuration list for PBXProject "RenderAImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D78BBBDD2C9B1AAB003ED284 /* Debug */,
-				D78BBBDE2C9B1AAB003ED284 /* Release */,
+				D7C202902CF6F2F5007AE17A /* Debug */,
+				D7C202912CF6F2F5007AE17A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D78BBBDF2C9B1AAB003ED284 /* Build configuration list for PBXNativeTarget "HelloTriangle" */ = {
+		D7C202922CF6F2F5007AE17A /* Build configuration list for PBXNativeTarget "RenderAImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D78BBBE02C9B1AAB003ED284 /* Debug */,
-				D78BBBE12C9B1AAB003ED284 /* Release */,
+				D7C202932CF6F2F5007AE17A /* Debug */,
+				D7C202942CF6F2F5007AE17A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D78BBBC82C9B1AAA003ED284 /* Project object */;
+	rootObject = D7C2027B2CF6F2F3007AE17A /* Project object */;
 }
