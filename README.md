@@ -5,5 +5,5 @@ Projects
 
 - [x] Hello, metal!
 - [x] Hello, triangle!
-- [ ] Render an image.
+- [x] Render an image.
 
