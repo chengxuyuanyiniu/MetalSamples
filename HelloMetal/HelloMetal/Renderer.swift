@@ -9,6 +9,8 @@ struct Vertex {
     var textureCoordinate: SIMD2<Float>
 }
 
+
+@MainActor
 class Renderer: NSObject {
     unowned var mtkView: MTKView
     private var device: MTLDevice!
@@ -47,30 +49,33 @@ extension Renderer: MTKViewDelegate {
         guard let renderPassDesriptor = view.currentRenderPassDescriptor else {
             return
         }
+        
         let commanderBuffer = commandQueue.makeCommandBuffer()
         let commanderEncoder = commanderBuffer?.makeRenderCommandEncoder(descriptor: renderPassDesriptor)
         commanderEncoder?.setRenderPipelineState(pipelineState)
-        
-        let vertices = [
-            // 左上角
-            Vertex(pixelPosition: [-256,  256], textureCoordinate: [0.0, 0.0]),
-            // 左下角
-            Vertex(pixelPosition: [-256, -256], textureCoordinate: [0.0, 1.0]),
-            // 右下角
-            Vertex(pixelPosition: [ 256, -256], textureCoordinate: [1.0, 1.0]),
-            // 左上角
-            Vertex(pixelPosition: [-256,  256], textureCoordinate: [0.0, 0.0]),
-            // 右下角
-            Vertex(pixelPosition: [ 256, -256], textureCoordinate: [1.0, 1.0]),
-            // 右上角
-            Vertex(pixelPosition: [ 256,  256], textureCoordinate: [1.0, 0.0]),
-        ]
-        
-        let vertexBuffer = device.makeBuffer(bytes: vertices, length: MemoryLayout<Vertex>.stride * vertices.count)
-        commanderEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        commanderEncoder?.setVertexBytes(&viewPortSize, length: MemoryLayout<vector_int2>.stride, index: 1)
-        commanderEncoder?.setFragmentTexture(texture, index: 0)
-        commanderEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)
+        if let texture {
+            let vertices = [
+                // 左上角
+                Vertex(pixelPosition: [-256,  256], textureCoordinate: [0.0, 0.0]),
+                // 左下角
+                Vertex(pixelPosition: [-256, -256], textureCoordinate: [0.0, 1.0]),
+                // 右下角
+                Vertex(pixelPosition: [ 256, -256], textureCoordinate: [1.0, 1.0]),
+                // 左上角
+                Vertex(pixelPosition: [-256,  256], textureCoordinate: [0.0, 0.0]),
+                // 右下角
+                Vertex(pixelPosition: [ 256, -256], textureCoordinate: [1.0, 1.0]),
+                // 右上角
+                Vertex(pixelPosition: [ 256,  256], textureCoordinate: [1.0, 0.0]),
+            ]
+            
+            let vertexBuffer = device.makeBuffer(bytes: vertices, length: MemoryLayout<Vertex>.stride * vertices.count)
+            commanderEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+            commanderEncoder?.setVertexBytes(&viewPortSize, length: MemoryLayout<vector_int2>.stride, index: 1)
+            commanderEncoder?.setFragmentTexture(texture, index: 0)
+            commanderEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)
+        }
+ 
         commanderEncoder?.endEncoding()
         
         guard let drawable = view.currentDrawable else {
