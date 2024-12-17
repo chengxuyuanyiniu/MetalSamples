@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D70C7D272D11179000B2BBED /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70C7D262D11179000B2BBED /* Renderer.swift */; };
+		D70C7D2F2D111FD500B2BBED /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = D70C7D2E2D111FD500B2BBED /* Shader.metal */; };
+		D70C7D312D111FE300B2BBED /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70C7D302D111FE300B2BBED /* Renderer.swift */; };
 		D7C202872CF6F2F3007AE17A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C202862CF6F2F3007AE17A /* AppDelegate.swift */; };
 		D7C202892CF6F2F3007AE17A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C202882CF6F2F3007AE17A /* ViewController.swift */; };
 		D7C2028B2CF6F2F5007AE17A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7C2028A2CF6F2F5007AE17A /* Assets.xcassets */; };
 		D7C2028E2CF6F2F5007AE17A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D7C2028D2CF6F2F5007AE17A /* Base */; };
-		D7C202982CF6F34F007AE17A /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = D7C202972CF6F34F007AE17A /* Shader.metal */; };
 		D7C2029A2CF6F729007AE17A /* lena_color.png in Resources */ = {isa = PBXBuildFile; fileRef = D7C202992CF6F729007AE17A /* lena_color.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D70C7D262D11179000B2BBED /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		D70C7D2E2D111FD500B2BBED /* Shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
+		D70C7D302D111FE300B2BBED /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		D7C202832CF6F2F3007AE17A /* RenderAImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenderAImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7C202862CF6F2F3007AE17A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7C202882CF6F2F3007AE17A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D7C2028A2CF6F2F5007AE17A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7C2028D2CF6F2F5007AE17A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7C2028F2CF6F2F5007AE17A /* RenderAImage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RenderAImage.entitlements; sourceTree = "<group>"; };
-		D7C202972CF6F34F007AE17A /* Shader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = Shader.metal; path = ../../../HelloTriangle/HelloTriangle/Shader.metal; sourceTree = "<group>"; };
 		D7C202992CF6F729007AE17A /* lena_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lena_color.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,13 +58,13 @@
 		D7C202852CF6F2F3007AE17A /* RenderAImage */ = {
 			isa = PBXGroup;
 			children = (
-				D70C7D262D11179000B2BBED /* Renderer.swift */,
+				D70C7D302D111FE300B2BBED /* Renderer.swift */,
 				D7C202862CF6F2F3007AE17A /* AppDelegate.swift */,
 				D7C202882CF6F2F3007AE17A /* ViewController.swift */,
 				D7C2028A2CF6F2F5007AE17A /* Assets.xcassets */,
 				D7C2028C2CF6F2F5007AE17A /* Main.storyboard */,
 				D7C2028F2CF6F2F5007AE17A /* RenderAImage.entitlements */,
-				D7C202972CF6F34F007AE17A /* Shader.metal */,
+				D70C7D2E2D111FD500B2BBED /* Shader.metal */,
 				D7C202992CF6F729007AE17A /* lena_color.png */,
 			);
 			path = RenderAImage;
@@ -98,7 +98,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1610;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					D7C202822CF6F2F3007AE17A = {
 						CreatedOnToolsVersion = 15.4;
@@ -141,9 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D70C7D272D11179000B2BBED /* Renderer.swift in Sources */,
-				D7C202982CF6F34F007AE17A /* Shader.metal in Sources */,
 				D7C202892CF6F2F3007AE17A /* ViewController.swift in Sources */,
+				D70C7D2F2D111FD500B2BBED /* Shader.metal in Sources */,
+				D70C7D312D111FE300B2BBED /* Renderer.swift in Sources */,
 				D7C202872CF6F2F3007AE17A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,7 +196,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -260,7 +259,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -291,7 +289,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -305,7 +302,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_STRICT_CONCURRENCY = complete;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -318,7 +315,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -332,7 +328,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_STRICT_CONCURRENCY = complete;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
