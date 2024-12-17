@@ -6,4 +6,5 @@ Projects
 - [x] Hello, metal!
 - [x] Hello, triangle!
 - [x] Render an image.
+- [x] Offscreen Render
 
