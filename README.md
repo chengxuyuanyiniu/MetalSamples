@@ -7,4 +7,5 @@ Projects
 - [x] Hello, triangle!
 - [x] Render an image.
 - [x] Offscreen Render
+- [x] Compute Pass
 

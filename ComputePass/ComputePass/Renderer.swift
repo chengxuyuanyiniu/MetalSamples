@@ -22,10 +22,12 @@ class Renderer: NSObject {
     private var device: MTLDevice!
     private var commandQueue: MTLCommandQueue!
     private var drawablePipelineState: MTLRenderPipelineState!
-    private var offscreenPipelineState: MTLRenderPipelineState!
-    var offscreenTexture: MTLTexture!
+    private var computePipelineState: MTLComputePipelineState!
     var offscreenRenderPassDescriptor: MTLRenderPassDescriptor!
-    
+    var computePassDescriptor: MTLComputePassDescriptor!
+    var inputTexture: MTLTexture!
+    var outputTexture: MTLTexture!
+
     var viewPortSize: vector_int2 = .zero
     
     init(mtkView: MTKView) {
@@ -35,14 +37,8 @@ class Renderer: NSObject {
         device = mtkView.device
         commandQueue = device.makeCommandQueue()
         
-        let textureDescriptor = createOffscreenTetureDescriptor()
-        offscreenTexture = device.makeTexture(descriptor: textureDescriptor)
     
-        offscreenRenderPassDescriptor = MTLRenderPassDescriptor()
-        offscreenRenderPassDescriptor.colorAttachments[0].texture = offscreenTexture
-        offscreenRenderPassDescriptor.colorAttachments[0].loadAction = .clear
-        offscreenRenderPassDescriptor.colorAttachments[0].storeAction = .store
-        offscreenRenderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.5, green: 1.0, blue: 1.0, alpha: 1.0)
+       
         
         let library = device.makeDefaultLibrary()
         // Drawable pineline
@@ -57,40 +53,64 @@ class Renderer: NSObject {
             fatalError("fail to create pipelineState")
         }
         
-        // Offscreen pipeline
-        let offscreenPipelineDescriptor = MTLRenderPipelineDescriptor()
-        offscreenPipelineDescriptor.label = "Offscreen Render Pinepline"
-        offscreenPipelineDescriptor.vertexFunction = library?.makeFunction(name: "offscreenVertexShader")
-        offscreenPipelineDescriptor.fragmentFunction = library?.makeFunction(name: "offscreenFragmentShader")
-        offscreenPipelineDescriptor.colorAttachments[0].pixelFormat = offscreenTexture.pixelFormat
-        do {
-            offscreenPipelineState = try device.makeRenderPipelineState(descriptor: offscreenPipelineDescriptor)
-        } catch {
-            fatalError("fail to create offscreen pipelineState")
+        // Compute pipeline
+        guard let kernelFunction = library?.makeFunction(name: "grayscaleKernel") else {
+            fatalError("fail to load kernel function - grayscaleKernel")
         }
-
+        do {
+            computePipelineState = try device.makeComputePipelineState(function: kernelFunction)
+        } catch {
+            fatalError("fail to create compute pipelineState")
+        }
+        
+        inputTexture = createInputTexture()
+        
+        let outputTextureDescriptor = createOutputTextureDescriptor(inputTexture: inputTexture)
+        outputTexture = device.makeTexture(descriptor: outputTextureDescriptor)
+        
     }
     
-    //
-    func createOffscreenTetureDescriptor() -> MTLTextureDescriptor {
+    private func createInputTexture() -> MTLTexture? {
+        let device = MTLCreateSystemDefaultDevice()!
+        let loader = MTKTextureLoader(device: device)
+        guard let url = Bundle.main.url(forResource: "lena_color", withExtension: "png") else {
+            return nil
+        }
+        let texture = try? loader.newTexture(URL: url)
+        return texture
+    }
+    
+    func createOutputTextureDescriptor(inputTexture: MTLTexture) -> MTLTextureDescriptor {
         let descriptor = MTLTextureDescriptor()
         descriptor.textureType = .type2D
-        descriptor.width = 512
-        descriptor.height = 512
-        descriptor.pixelFormat = .rgba8Unorm
-        descriptor.usage = [.renderTarget, .shaderRead]
+        descriptor.width = inputTexture.width
+        descriptor.height = inputTexture.height
+        descriptor.pixelFormat = inputTexture.pixelFormat
+        // shaderWrite -> compute pass, shaderRead -> render pass
+        descriptor.usage = [.shaderWrite, .shaderRead]
         return descriptor
     }
     
+    var threadsPerThreadgroup: MTLSize {
+        let w = computePipelineState?.threadExecutionWidth ?? 0
+        let h = (computePipelineState?.maxTotalThreadsPerThreadgroup ?? 0) / w
+        return MTLSize(width: w, height: h, depth: 1)
+    }
 }
 
 
 extension Renderer: MTKViewDelegate {
     func draw(in view: MTKView) {
         let commanderBuffer = commandQueue.makeCommandBuffer()
-        // Offscreen Render Pass
-        offscreenRender(commanderBuffer: commanderBuffer)
+        // Compute Pass - Process the input image
+        let computeEncoder = commanderBuffer?.makeComputeCommandEncoder()
         
+        computeEncoder?.setComputePipelineState(computePipelineState)
+        computeEncoder?.setTexture(inputTexture, index: 0)
+        computeEncoder?.setTexture(outputTexture, index: 1)
+        let threadsPerGrid = MTLSize(width: inputTexture.width, height: inputTexture.height, depth: 1)
+        computeEncoder?.dispatchThreads(threadsPerGrid, threadsPerThreadgroup: threadsPerThreadgroup)
+        computeEncoder?.endEncoding()
         
         // Drawable Render Pass
         guard let renderPassDesriptor = view.currentRenderPassDescriptor else {
@@ -98,7 +118,7 @@ extension Renderer: MTKViewDelegate {
         }
         let commanderEncoder = commanderBuffer?.makeRenderCommandEncoder(descriptor: renderPassDesriptor)
         commanderEncoder?.setRenderPipelineState(drawablePipelineState)
-        if let offscreenTexture {
+        if let outputTexture {
             let vertices = [
                 // 左上角
                 Vertex(pixelPosition: [-256,  256], textureCoordinate: [0.0, 0.0]),
@@ -117,7 +137,7 @@ extension Renderer: MTKViewDelegate {
             let vertexBuffer = device.makeBuffer(bytes: vertices, length: MemoryLayout<Vertex>.stride * vertices.count)
             commanderEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
             commanderEncoder?.setVertexBytes(&viewPortSize, length: MemoryLayout<vector_int2>.stride, index: 1)
-            commanderEncoder?.setFragmentTexture(offscreenTexture, index: 0)
+            commanderEncoder?.setFragmentTexture(outputTexture, index: 0)
             commanderEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)
         }
  
@@ -132,25 +152,5 @@ extension Renderer: MTKViewDelegate {
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         viewPortSize = vector_int2(x: Int32(size.width), y: Int32(size.height))
-    }
-    
-    func offscreenRender(commanderBuffer: MTLCommandBuffer?) {
-        let commanderEncoder = commanderBuffer?.makeRenderCommandEncoder(descriptor: offscreenRenderPassDescriptor)
-        commanderEncoder?.setRenderPipelineState(offscreenPipelineState)
-        let vertices = [
-            //左下角
-            OffscreenVertex(position: [-1.0, -1.0, 1.0, 1.0], color: [1.0, 0.0, 0.0, 1.0]),
-            //正上方
-            OffscreenVertex(position: [ 0.0,  1.0, 1.0, 1.0], color: [1.0, 0.5, 0.0, 1.0]),
-            //右下角
-            OffscreenVertex(position: [ 1.0, -1.0, 1.0, 1.0], color: [0.0, 1.0, 0.0, 1.0]),
-        ]
-        
-        let vertexBuffer = device.makeBuffer(bytes: vertices, length: MemoryLayout<OffscreenVertex>.stride * vertices.count)
-        commanderEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        
-        commanderEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)
-        
-        commanderEncoder?.endEncoding()
     }
 }
