@@ -8,4 +8,5 @@ Projects
 - [x] Render an image.
 - [x] Offscreen Render
 - [x] Compute Pass
+- [x] Compute On GPU
 
