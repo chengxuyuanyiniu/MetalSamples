@@ -9,6 +9,6 @@ Projects
 - [x] Offscreen Render
 - [x] Compute Pass
 - [x] Compute On GPU
-- [ ] Depth test
+- [x] Depth test
 - [ ] Blend
 
