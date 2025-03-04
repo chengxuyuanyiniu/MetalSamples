@@ -10,5 +10,5 @@ Projects
 - [x] Compute Pass
 - [x] Compute On GPU
 - [x] Depth test
-- [ ] Blend
+- [x] Blend
 
