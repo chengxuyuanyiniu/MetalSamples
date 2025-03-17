@@ -11,16 +11,17 @@ using namespace metal;
 struct Uniforms {
     float4x4 projectionMatrix;
     float4x4 rotationMatrix;
+    float4x4 viewMatrix;
 };
 
 struct RasterizerData {
     float4 position [[position]];
-    float4 color;
+    float2 textureCoordinate;
 };
 
 struct Vertex {
     float4 position;
-    float4 color;
+    float2 textureCoordinate;
 };
 
 
@@ -30,13 +31,16 @@ vertex RasterizerData vertexShader(uint vertexID [[vertex_id]],
                                    
                                    ) {
     RasterizerData out;
-    out.position = uniforms.projectionMatrix * uniforms.rotationMatrix * vertices[vertexID].position;
-
-//    out.position = vertices[vertexID].position;
-    out.color = vertices[vertexID].color;
+    out.position = uniforms.projectionMatrix * uniforms.viewMatrix * uniforms.rotationMatrix * vertices[vertexID].position;
+    out.textureCoordinate = vertices[vertexID].textureCoordinate;
     return out;
 }
 
-fragment float4 fragmentShader(RasterizerData in [[stage_in]]) {
-    return in.color;
+fragment float4 fragmentShader(RasterizerData in [[stage_in]],
+                               texture2d<half> colorTexture [[texture(0)]]
+                               )  {
+    constexpr sampler textureSampler (mag_filter::linear,
+                                      min_filter::linear);
+    const half4 colorSample = colorTexture.sample(textureSampler, in.textureCoordinate);
+    return float4(colorSample);
 }

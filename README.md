@@ -11,4 +11,6 @@ Projects
 - [x] Compute On GPU
 - [x] Depth test
 - [x] Blend
+- [x] Perspective Projection
+- [ ] Orthographic Projection
 
