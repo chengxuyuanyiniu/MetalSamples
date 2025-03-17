@@ -1,4 +1,8 @@
 # MetalSamples
+
+- [English](README.md)
+- [简体中文](README_zh-CN.md)
+
 Here, you'll find in-depth tutorials, code samples, and practical examples demonstrating how to use Apple's Metal API.
 
 Projects
