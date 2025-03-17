@@ -16,5 +16,5 @@ Projects
 - [x] Depth test
 - [x] Blend
 - [x] Perspective Projection
-- [ ] Orthographic Projection
+- [x] Orthographic Projection
 

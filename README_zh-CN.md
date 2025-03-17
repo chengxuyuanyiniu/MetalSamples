@@ -12,5 +12,5 @@ Projects
 - [x] 深度测试（Depth Test）
 - [x] 混合（Blend）
 - [x] 透视投影（Perspective Projection）
-- [ ] 正交投影（Orthographic Projection）
+- [x] 正交投影（Orthographic Projection）
 
