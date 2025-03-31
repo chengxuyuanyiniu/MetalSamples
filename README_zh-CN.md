@@ -13,4 +13,6 @@ Projects
 - [x] 混合（Blend）
 - [x] 透视投影（Perspective Projection）
 - [x] 正交投影（Orthographic Projection）
+- [ ] 读取像素
+- [ ] 渲染立方体
 
