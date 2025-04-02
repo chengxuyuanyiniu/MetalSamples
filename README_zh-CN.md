@@ -13,6 +13,6 @@ Projects
 - [x] [混合（Blend）](https://juejin.cn/post/7477875236145168410)
 - [x] [透视投影（Perspective Projection)](https://juejin.cn/post/7485631488115130422)
 - [x] [正交投影（Orthographic Projection）](https://juejin.cn/post/7482715623181582363)
-- [ ] 读取像素
+- [x] 读取像素
 - [ ] 渲染立方体
 

@@ -17,6 +17,6 @@ Projects
 - [x] Blend
 - [x] Perspective Projection
 - [x] Orthographic Projection
-- [ ] Read Pixel
+- [x] Read Pixel
 - [ ] Render Cube
 
